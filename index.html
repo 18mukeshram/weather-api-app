@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Custom Tailwind config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["system-ui", "Segoe UI", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-sky-900 via-slate-900 to-slate-950 text-white flex items-center justify-center px-4"
+  >
+    <div class="w-full max-w-md">
+      <!-- Card -->
+      <div
+        class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-6 md:p-8"
+      >
+        <!-- App Title -->
+        <h1 class="text-2xl md:text-3xl font-semibold text-center mb-4">
+          Weather <span class="text-sky-300">Dashboard</span>
+        </h1>
+        <p class="text-center text-sm text-slate-200 mb-6">
+          Enter a city name to view live weather details.
+        </p>
+
+        <!-- Search -->
+        <div class="flex items-center gap-2 mb-6">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Search city (e.g., Guntur)"
+            class="flex-1 px-4 py-2.5 rounded-2xl bg-white/10 border border-white/30 outline-none text-sm placeholder:text-slate-300 focus:ring-2 focus:ring-sky-400 focus:border-transparent"
+          />
+          <button
+            id="searchBtn"
+            class="px-4 py-2.5 rounded-2xl bg-sky-500 hover:bg-sky-400 active:bg-sky-600 transition text-sm font-medium"
+          >
+            Search
+          </button>
+        </div>
+
+        <!-- Status / Error -->
+        <p
+          id="statusMessage"
+          class="text-xs text-center text-red-300 mb-4 hidden"
+        ></p>
+
+        <!-- Loading State -->
+        <div
+          id="loadingState"
+          class="hidden flex flex-col items-center justify-center py-8 gap-3"
+        >
+          <div
+            class="w-10 h-10 border-4 border-sky-400/70 border-t-transparent rounded-full animate-spin"
+          ></div>
+          <p class="text-xs text-slate-200 tracking-wide">
+            Fetching latest weather...
+          </p>
+        </div>
+
+        <!-- Weather Card -->
+        <div id="weatherCard" class="space-y-4 hidden">
+          <!-- Top: City & Date -->
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 id="cityName" class="text-xl font-semibold"></h2>
+              <p id="dateText" class="text-xs text-slate-200"></p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs uppercase tracking-wide text-slate-300">
+                Condition
+              </p>
+              <p id="weatherMain" class="text-sm font-medium"></p>
+            </div>
+          </div>
+
+          <!-- Middle: Temp & Icon -->
+          <div class="flex items-center justify-between">
+            <div>
+              <p
+                id="temperature"
+                class="text-5xl font-semibold leading-none mb-1"
+              ></p>
+              <p id="feelsLike" class="text-xs text-slate-200"></p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img id="weatherIcon" src="" alt="" class="w-20 h-20" />
+              <p
+                id="weatherDescription"
+                class="text-xs capitalize mt-1 text-slate-200"
+              ></p>
+            </div>
+          </div>
+
+          <!-- Bottom: Extra Info -->
+          <div class="grid grid-cols-3 gap-3 mt-4 text-xs">
+            <div class="bg-white/5 rounded-2xl p-3 border border-white/10">
+              <p class="text-slate-300">Humidity</p>
+              <p id="humidity" class="text-lg font-semibold mt-1"></p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-3 border border-white/10">
+              <p class="text-slate-300">Wind</p>
+              <p id="windSpeed" class="text-lg font-semibold mt-1"></p>
+            </div>
+            <div class="bg-white/5 rounded-2xl p-3 border border-white/10">
+              <p class="text-slate-300">Pressure</p>
+              <p id="pressure" class="text-lg font-semibold mt-1"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <p class="text-[11px] text-center text-slate-300 mt-6">
+          Built by Mukesh · Powered by OpenWeather API
+        </p>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
