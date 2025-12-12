@@ -21,13 +21,13 @@ const windSpeedEl = document.getElementById("windSpeed");
 const pressureEl = document.getElementById("pressure");
 
 // ====== HELPERS ======
-function showStatus(information, isError = false) {
+function showStatus(message, isError = false) {
   if (!message) {
     statusMessage.classList.add("hidden");
     statusMessage.textContent = "";
     return;
   }
-  statusMessage.textContent = information;
+  statusMessage.textContent = message;
   statusMessage.classList.remove("hidden");
 
   if (isError) {
@@ -147,18 +147,4 @@ cityInput.addEventListener("keydown", (e) => {
     const city = cityInput.value.trim();
     fetchWeather(city);
   }
-});
-
-window.addEventListener("load", () => {
-  cityInput.value = "America/Chicago";
-  fetchWeather("America/Chicago");
-});
-
-window.addEventListener("beforeunload", () => {
-  cityInput.value = "America/Chicago";
-});
-
-window.addEventListener("load", () => {
-  cityInput.value = "America/Chicago";
-  fetchWeather("America/Chicago");
 });
