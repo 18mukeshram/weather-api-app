@@ -21,13 +21,13 @@ const windSpeedEl = document.getElementById("windSpeed");
 const pressureEl = document.getElementById("pressure");
 
 // ====== HELPERS ======
-function showStatus(message, isError = false) {
+function showStatus(information, isError = false) {
   if (!message) {
     statusMessage.classList.add("hidden");
     statusMessage.textContent = "";
     return;
   }
-  statusMessage.textContent = message;
+  statusMessage.textContent = information;
   statusMessage.classList.remove("hidden");
 
   if (isError) {
