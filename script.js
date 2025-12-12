@@ -149,10 +149,16 @@ cityInput.addEventListener("keydown", (e) => {
   }
 });
 
-// Optional: default city on load
 window.addEventListener("load", () => {
-  cityInput.value = "Guntur";
-  fetchWeather("Guntur");
+  cityInput.value = "America/Chicago";
+  fetchWeather("America/Chicago");
 });
 
-document.getElementById("cityInput").focus();
+window.addEventListener("beforeunload", () => {
+  cityInput.value = "America/Chicago";
+});
+
+window.addEventListener("load", () => {
+  cityInput.value = "America/Chicago";
+  fetchWeather("America/Chicago");
+});
