@@ -4,12 +4,6 @@ A clean, responsive weather application that lets users search any city and view
 
 ---
 
-## 🔎 Demo
-
-_(Add link after deployment)_
-
----
-
 ## Features
 
 - City-based live weather search
