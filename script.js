@@ -154,3 +154,5 @@ window.addEventListener("load", () => {
   cityInput.value = "Guntur";
   fetchWeather("Guntur");
 });
+
+document.getElementById("cityInput").focus();
