@@ -82,3 +82,8 @@ Dark/light theme toggle
 
 Deploy to GitHub Pages or Netlify and attach live demo link
 ```
+
+License & Contact
+
+MIT License — feel free to reuse.
+Contact: mukeshrambellamkonda@gmail.com
