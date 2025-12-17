@@ -50,12 +50,11 @@ cd weather-api-app
 
 Open index.html in the browser (or run the live server).
 
-Add your OpenWeather API key in script.js:
+## Add your OpenWeather API key in script.js:
 
-js
-Copy code
 const API_KEY = "YOUR_OPENWEATHER_API_KEY";
-Usage
+
+## Usage
 Type a city name and press Enter or click Search.
 
 Loading state displays while the API request runs.
@@ -64,7 +63,7 @@ On success: city name, current temperature, "feels like", description, humidity,
 
 On failure: a friendly error message is displayed.
 
-What I learned
+## What I learned
 Integrating third-party REST APIs with fetch and async/await
 
 UX for asynchronous data (loading/error states)
@@ -73,7 +72,7 @@ Utility-first styling with Tailwind CSS
 
 Small performance and accessibility improvements
 
-Future Improvements
+## Future Improvements
 5-day forecast + hourly breakdown
 
 Geolocation-based default city
@@ -81,9 +80,8 @@ Geolocation-based default city
 Dark/light theme toggle
 
 Deploy to GitHub Pages or Netlify and attach live demo link
-```
 
-License & Contact
-
+## License & Contact
 MIT License — feel free to reuse.
 Contact: mukeshrambellamkonda@gmail.com
+```
